@@ -35,6 +35,7 @@ bower_components
 dist
 build
 public
+package-lock.json
 
 # Node.JS
 node_modules
