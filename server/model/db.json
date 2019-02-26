@@ -1,5 +1,4 @@
 {
-  "message": [],
   "products": [
     {
       "src": "./assets/img/products/Work1.jpg",
@@ -61,7 +60,7 @@
       "text": "Максимальное число городов в туре"
     },
     {
-      "number": 1111,
+      "number": 13,
       "text": "Лет на сцене в качестве скрипача"
     }
   ]

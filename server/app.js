@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const flash = require('connect-flash');
 
 const app = express();
@@ -12,6 +14,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use(cookieParser());
+app.use(session({
+  resave: true,
+  secret: 'login',
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 60000
+  }
+}));
+app.use(session({
+  resave: true,
+  secret: 'mail',
+  saveUninitialized: true,
+}));
 
 app.use(flash());
 app.use('/', require('./routes/index'));
