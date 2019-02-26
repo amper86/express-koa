@@ -1,0 +1,10 @@
+extends ../_template
+
+block variables
+    - var title = 'Error'
+
+block content
+    h1= status
+    h2= error.message
+    pre #{error.stack}
+    a(href='/') на главную
